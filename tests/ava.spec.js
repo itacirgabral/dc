@@ -1,5 +1,5 @@
 const test = require('ava')
 
-test('foo', t => {
+test('any', t => {
     t.pass()
 })
