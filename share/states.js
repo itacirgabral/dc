@@ -8,7 +8,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": false
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D2",
@@ -18,7 +18,7 @@ exports.states = [
       "Vento": "Forte"
       },
     "Classe": false
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D3",
@@ -28,7 +28,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D4",
@@ -38,7 +38,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D5",
@@ -48,7 +48,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D6",
@@ -58,7 +58,7 @@ exports.states = [
       "Vento": "Forte"
       },
     "Classe": false
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D7",
@@ -68,7 +68,7 @@ exports.states = [
       "Vento": "Forte"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D8",
@@ -78,7 +78,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": false
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D9",
@@ -88,7 +88,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D10",
@@ -98,7 +98,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D11",
@@ -108,7 +108,7 @@ exports.states = [
       "Vento": "Forte"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D12",
@@ -118,7 +118,7 @@ exports.states = [
       "Vento": "Forte"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D13",
@@ -128,7 +128,7 @@ exports.states = [
       "Vento": "Fraco"
       },
     "Classe": true
-   },
+  },
   { 
     "Instancia": {
       "Dia": "D14",
@@ -138,5 +138,5 @@ exports.states = [
       "Vento": "Forte"
       },
     "Classe": false
-   },
+  },
 ]
