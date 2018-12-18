@@ -1,5 +1,14 @@
 const { states } = require('./share/states')
 const { convert: scaffold } = require('./src/mcgraw2scaffold')
-const dataset = states.map(scaffold)
+const { normalize } = require('./src/normalize')
+const { id3: train } = require('./src/id3')
 
-console.log(JSON.stringify(dataset, null, 4))
+const dataset = normalize(states.map(scaffold))
+const tree = {}
+train({dataset, tree})
+
+
+
+console.log(JSON.stringify(train({dataset, tree}), null, 2))
+
+
