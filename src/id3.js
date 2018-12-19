@@ -13,7 +13,7 @@ exports.id3 = function id3({ dataset, tree, keys,  doubt}) {
   const collimed = keys.map(collimer)
   /**
    * todo
-   * collimed --> entropy
+   * collimed[7][14] -->  group
    */
 }
 
