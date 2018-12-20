@@ -14,12 +14,11 @@ const input = [
 test('germinate Perspectiva', t => {
   const expected = {
     "gain": gain(input),
-    "field": "Perspectiva",
     "gridsheet": input,
     "Perspectiva": {
-      "Ensolarado": {},
+      "Ensolarado": undefined,
       "Nublado": true,
-      "Chuvoso": {}
+      "Chuvoso": undefined
   }}
 
   const endLeaf = false
@@ -30,7 +29,6 @@ test('germinate Perspectiva', t => {
 test('germinate Perspectiva at end leaf', t => {
   const expected = {
     "gain": gain(input),
-    "field": "Perspectiva",
     "gridsheet": input,
     "Perspectiva": {
       "Ensolarado": false,

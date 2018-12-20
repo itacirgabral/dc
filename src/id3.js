@@ -1,44 +1,40 @@
 const { datasetKeys } = require('./datasetKeys')
-const { mkCollime } = require('./collime')
+const { mkCollimer } = require('./mkCollimer')
 const { agglutinator } = require('./agglutinator')
-const { gain } = require('./gain')
-const { germinations } = require('./germination')
+const { mkGerm } = require('./mkGerm')
 
-exports.id3 = function id3({ dataset, tree, keys,  doubt}) {
-  const collimer = mkCollime(dataset)
+exports.id3 = function id3({ dataset, keys}) {
+  const collimer = mkCollimer(dataset)
 
   if (!keys) {
     keys = datasetKeys(dataset)
   }
-  if (!doubt) {
-    doubt = 0
-  }
+  const endLeaf = keys.length === 1
+
   const collimed = keys.map(collimer)
   const agglutined = collimed.map(agglutinator)
-  const gainsEach = agglutined.map(e => {
-    const leaf = {}
-    leaf.gain = gain(e)
-    leaf[e[0][0]] = e[1].reduce((a, b) => {
-      if (keys.length === 1) {
-        a[b[0]] = b[1] > b[2] ? true : false
-      } else if (b[1] === 0) {
-        a[b[0]] = false
-      } else if (b[2] === 0) {
-        a[b[0]] = true
-      } else {
-        a[b[0]] = {}
-      }
-      return a
-    }, {})
-    
-    return leaf
-  })
 
-  const bestOf = gainsEach.slice(1).reduce((a, b) => {
+  const germination = mkGerm(endLeaf)
+  const gainsEach = agglutined.map(germination)
+
+  const bestGain = gainsEach.slice(1).reduce((a, b) => {
     return a.gain > b.gain ? a : b
   }, gainsEach[0])
 
-  return bestOf
+  if (!endLeaf) {
+    const field = bestGain.gridseet[0][0]
+    const nextKeys = keys.filter(e => e !== field)
+    const ungermined = Object.entries(bestGain[field]).filter(
+      ([k, v]) => typeof(v) === 'undefined'
+    )
+    /*
+    ** todo
+    ** nextDataset
+    /*
+
+  }
+
+  return bestGain
 }
 
 /*

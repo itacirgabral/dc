@@ -1,5 +1,5 @@
 const test = require('ava')
-const { mkCollime } = require('./../src/collime')
+const { mkCollime } = require('../src/mkCollimer')
 const dataset = [
   [
     [false],

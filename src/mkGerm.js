@@ -6,7 +6,6 @@ exports.mkGerm = function mkgerm (endLeaf) {
     
     const field = gs[0][0]
     leaf.gain = gain(gs)
-    leaf.field = field
     leaf.gridsheet = gs
 
     leaf[field] = gs[1].reduce((a, b) => {
@@ -17,7 +16,7 @@ exports.mkGerm = function mkgerm (endLeaf) {
       } else if (b[2] === 0) {
         a[b[0]] = true
       } else {
-        a[b[0]] = {}
+        a[b[0]] = undefined
       }
       return a
     }, {})
