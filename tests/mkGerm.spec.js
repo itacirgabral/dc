@@ -14,6 +14,8 @@ const input = [
 test('germinate Perspectiva', t => {
   const expected = {
     "gain": gain(input),
+    "field": "Perspectiva",
+    "gridsheet": input,
     "Perspectiva": {
       "Ensolarado": {},
       "Nublado": true,
@@ -28,6 +30,8 @@ test('germinate Perspectiva', t => {
 test('germinate Perspectiva at end leaf', t => {
   const expected = {
     "gain": gain(input),
+    "field": "Perspectiva",
+    "gridsheet": input,
     "Perspectiva": {
       "Ensolarado": false,
       "Nublado": true,
@@ -36,5 +40,5 @@ test('germinate Perspectiva at end leaf', t => {
 
   const endLeaf = true
 
-  t.deepEqual(mkGerm(endLeaf)(input), expected, 'should build tree branch')
+  t.deepEqual(mkGerm(endLeaf)(input), expected, 'should build terminal tree branch')
 })

@@ -1,10 +1,15 @@
 const { gain } = require('./gain')
 
 exports.mkGerm = function mkgerm (endLeaf) {
-  return function germination (seed) {
+  return function germination (gs) {
     const leaf = {}
-    leaf.gain = gain(seed)
-    leaf[seed[0][0]] = seed[1].reduce((a, b) => {
+    
+    const field = gs[0][0]
+    leaf.gain = gain(gs)
+    leaf.field = field
+    leaf.gridsheet = gs
+
+    leaf[field] = gs[1].reduce((a, b) => {
       if (endLeaf) {
         a[b[0]] = b[1] > b[2] ? true : false
       } else if (b[1] === 0) {
