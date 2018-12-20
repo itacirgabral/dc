@@ -1,7 +1,10 @@
 const test = require('ava')
 const { agglutinator } = require('./../src/agglutinator')
 
-const input = [
+const input = {}
+const expected = {}
+
+input.Perspectiva = [
   [[true],    ["Perspectiva","Ensolarado" ]],
   [[true],    ["Perspectiva","Ensolarado" ]],
   [[true],    ["Perspectiva","Nublado"    ]],
@@ -17,8 +20,24 @@ const input = [
   [[false],   ["Perspectiva","Chuvoso"    ]],
   [[false],   ["Perspectiva","Chuvoso"    ]]
 ]
+input.Vento = [
+  [[true],  ["Vento","Fraco"]],
+  [[true],  ["Vento","Fraco"]],
+  [[true],  ["Vento","Fraco"]],
+  [[true],  ["Vento","Fraco"]],
+  [[true],  ["Vento","Fraco"]],
+  [[true],  ["Vento","Fraco"]],
+  [[true],  ["Vento","Forte"]],
+  [[true],  ["Vento","Forte"]],
+  [[true],  ["Vento","Forte"]],
+  [[false], ["Vento","Fraco"]],
+  [[false], ["Vento","Fraco"]],
+  [[false], ["Vento","Forte"]],
+  [[false], ["Vento","Forte"]],
+  [[false], ["Vento","Forte"]]
+]
 
-const expected = [
+expected.Perspectiva = [
   ['Perspectiva', 9, 5],
   [
     ['Ensolarado', 2, 3],
@@ -27,6 +46,18 @@ const expected = [
   ]
 ]
 
-test("collapse fields into groups", t => {
-  t.deepEqual(agglutinator(input), expected,);
+expected.Vento = [
+  ['Vento', 9, 5],
+  [
+    ['Fraco', 6, 2],
+    ['Forte', 3, 3]
+  ]
+]
+
+test("collapse Perspectiva fields into groups", t => {
+  t.deepEqual(agglutinator(input.Perspectiva), expected.Perspectiva)
+})
+
+test("collapse Vento fields into groups", t => {
+  t.deepEqual(agglutinator(input.Vento), expected.Vento)
 })

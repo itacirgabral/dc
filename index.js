@@ -5,10 +5,5 @@ const { id3: train } = require('./src/id3')
 
 const dataset = normalize(states.map(scaffold))
 const tree = {}
-train({dataset, tree})
-
-
 
 console.log(JSON.stringify(train({dataset, tree}), null, 2))
-
-
