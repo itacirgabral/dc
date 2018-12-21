@@ -1,0 +1,32 @@
+{
+  "gain": 0.24674981977443905,
+  "gridsheet": [
+    [
+      "Perspectiva",
+      9,
+      5
+    ],
+    [
+      [
+        "Ensolarado",
+        2,
+        3
+      ],
+      [
+        "Nublado",
+        4,
+        0
+      ],
+      [
+        "Chuvoso",
+        3,
+        2
+      ]
+    ]
+  ],
+  "Perspectiva": {
+    "Ensolarado": "",
+    "Nublado": true,
+    "Chuvoso": ""
+  }
+}
