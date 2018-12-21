@@ -9,11 +9,7 @@ exports.id3 = function id3({ dataset, keys}) {
 
   if (!keys) {
     console.log('not keys, generating...')
-    keys = datasetKeys(dataset)
-  } else {
-    console.log('have keys')
   }
-  console.log(`keys: ${JSON.stringify(keys)}`)
   const endLeaf = keys.length === 1
 
   const collimed = keys.map(collimer)
