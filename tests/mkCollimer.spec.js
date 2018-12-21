@@ -1,5 +1,5 @@
 const test = require('ava')
-const { mkCollime } = require('../src/mkCollimer')
+const { mkCollimer } = require('./../src/mkCollimer')
 const dataset = [
   [
     [false],
@@ -23,7 +23,7 @@ const dataset = [
   ]
 ]
 
-const collime = mkCollime(dataset)
+const collime = mkCollimer(dataset)
 
 test('slice one field of dataset', t => {
   t.plan(5)

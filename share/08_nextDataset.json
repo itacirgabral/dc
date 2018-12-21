@@ -1,17 +1,9 @@
-exports.dataset = [
+[
   [
     [
       false
     ],
     [
-      [
-        "Dia",
-        "D1"
-      ],
-      [
-        "Perspectiva",
-        "Ensolarado"
-      ],
       [
         "Temperatura",
         "Quente"
@@ -32,14 +24,6 @@ exports.dataset = [
     ],
     [
       [
-        "Dia",
-        "D2"
-      ],
-      [
-        "Perspectiva",
-        "Ensolarado"
-      ],
-      [
         "Temperatura",
         "Quente"
       ],
@@ -58,14 +42,6 @@ exports.dataset = [
       true
     ],
     [
-      [
-        "Dia",
-        "D3"
-      ],
-      [
-        "Perspectiva",
-        "Nublado"
-      ],
       [
         "Temperatura",
         "Quente"
@@ -86,14 +62,6 @@ exports.dataset = [
     ],
     [
       [
-        "Dia",
-        "D4"
-      ],
-      [
-        "Perspectiva",
-        "Chuvoso"
-      ],
-      [
         "Temperatura",
         "Moderada"
       ],
@@ -112,14 +80,6 @@ exports.dataset = [
       true
     ],
     [
-      [
-        "Dia",
-        "D5"
-      ],
-      [
-        "Perspectiva",
-        "Chuvoso"
-      ],
       [
         "Temperatura",
         "Fresca"
@@ -140,14 +100,6 @@ exports.dataset = [
     ],
     [
       [
-        "Dia",
-        "D6"
-      ],
-      [
-        "Perspectiva",
-        "Chuvoso"
-      ],
-      [
         "Temperatura",
         "Fresca"
       ],
@@ -166,14 +118,6 @@ exports.dataset = [
       true
     ],
     [
-      [
-        "Dia",
-        "D7"
-      ],
-      [
-        "Perspectiva",
-        "Nublado"
-      ],
       [
         "Temperatura",
         "Fresca"
@@ -194,14 +138,6 @@ exports.dataset = [
     ],
     [
       [
-        "Dia",
-        "D8"
-      ],
-      [
-        "Perspectiva",
-        "Ensolarado"
-      ],
-      [
         "Temperatura",
         "Moderada"
       ],
@@ -220,14 +156,6 @@ exports.dataset = [
       true
     ],
     [
-      [
-        "Dia",
-        "D9"
-      ],
-      [
-        "Perspectiva",
-        "Ensolarado"
-      ],
       [
         "Temperatura",
         "Fresca"
@@ -248,14 +176,6 @@ exports.dataset = [
     ],
     [
       [
-        "Dia",
-        "D10"
-      ],
-      [
-        "Perspectiva",
-        "Chuvoso"
-      ],
-      [
         "Temperatura",
         "Moderada"
       ],
@@ -275,14 +195,6 @@ exports.dataset = [
     ],
     [
       [
-        "Dia",
-        "D11"
-      ],
-      [
-        "Perspectiva",
-        "Ensolarado"
-      ],
-      [
         "Temperatura",
         "Moderada"
       ],
@@ -302,14 +214,6 @@ exports.dataset = [
     ],
     [
       [
-        "Dia",
-        "D12"
-      ],
-      [
-        "Perspectiva",
-        "Nublado"
-      ],
-      [
         "Temperatura",
         "Moderada"
       ],
@@ -328,14 +232,6 @@ exports.dataset = [
       true
     ],
     [
-      [
-        "Dia",
-        "D13"
-      ],
-      [
-        "Perspectiva",
-        "Nublado"
-      ],
       [
         "Temperatura",
         "Quente"
@@ -355,14 +251,6 @@ exports.dataset = [
       false
     ],
     [
-      [
-        "Dia",
-        "D14"
-      ],
-      [
-        "Perspectiva",
-        "Chuvoso"
-      ],
       [
         "Temperatura",
         "Moderada"

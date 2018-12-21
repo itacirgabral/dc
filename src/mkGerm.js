@@ -16,7 +16,7 @@ exports.mkGerm = function mkgerm (endLeaf) {
       } else if (b[2] === 0) {
         a[b[0]] = true
       } else {
-        a[b[0]] = undefined
+        a[b[0]] = ""
       }
       return a
     }, {})

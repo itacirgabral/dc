@@ -16,9 +16,9 @@ test('germinate Perspectiva', t => {
     "gain": gain(input),
     "gridsheet": input,
     "Perspectiva": {
-      "Ensolarado": undefined,
+      "Ensolarado": "",
       "Nublado": true,
-      "Chuvoso": undefined
+      "Chuvoso": ""
   }}
 
   const endLeaf = false
