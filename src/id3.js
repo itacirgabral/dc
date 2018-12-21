@@ -4,7 +4,7 @@ const { agglutinator } = require('./agglutinator')
 const { mkGerm } = require('./mkGerm')
 const { mkDatasetShrink } = require('./mkDatasetShrink')
 
-exports.id3 = function id3({ dataset, keys}) {
+function id3({ dataset, keys}) {
   const collimer = mkCollimer(dataset)
 
   if (!keys) {
@@ -23,6 +23,8 @@ exports.id3 = function id3({ dataset, keys}) {
   }, gainsEach[0])
 
   if (!endLeaf) {
+    console.log(`!endLeaf: ${!endLeaf}`)
+
     const field = bestGain.gridsheet[0][0]
     const nextKeys = keys.filter(e => e !== field)
     const ungermined = Object.entries(bestGain[field]).filter(
@@ -31,13 +33,20 @@ exports.id3 = function id3({ dataset, keys}) {
     
     const mkDataset = mkDatasetShrink(dataset, field)
 
-    ungermined.map(([k]) => [k, 
+    ungermined.map(([k]) => { 
+      console.log(`${field}.${k}`)
+      console.log(`##########`)
+      const dataset = mkDataset(k)
+      console.log(JSON.stringify(dataset, null, 2))
+      console.log(`##########`)
+      return [k, 
         id3({
-          dataset: mkDataset(k), 
+          dataset, 
           keys: nextKeys
         })
-      ]
+      ]}
     )
+
 
     return ungermined.reduce((a, b) => {
       
@@ -47,6 +56,9 @@ exports.id3 = function id3({ dataset, keys}) {
 
     }, bestGain)
   } else {
+    console.log(`!endLeaf: ${!endLeaf}`)
     return bestGain
   }
 }
+
+exports.id3 = id3

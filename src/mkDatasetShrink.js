@@ -4,6 +4,13 @@ exports.mkDatasetShrink = function mkDatasetShrink (dataset, field) {
       ([type, fields]) => fields.find(
         ([k, v]) => k === field && v === value
       )
-    )
+    ).map(
+      ([type, fields]) => [type, fields.filter(
+        ([k, v]) => k !== field && v !== value
+      )])
   }
 }
+/**
+ * fix
+ * remove [field, value] entries from fields of filtered dataset rows
+ */
