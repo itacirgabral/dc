@@ -16,3 +16,13 @@ test('composed dataset', t => {
   ])
   t.deepEqual(keys, ['k1', 'k2'], 'should return array with k1 and k2')
 })
+
+test('repeted dataset key', t => {
+  const keys = datasetKeys([
+    [[true],[['k1', 'v1']]],
+    [[true],[['k1', 'v1']]],
+    [[false],[['k1', 'v2']]],
+    [[false],[['k1', 'v2']]]
+  ])
+  t.deepEqual(keys, ['k1'], 'should return array with k1')
+})
