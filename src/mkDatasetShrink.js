@@ -10,7 +10,3 @@ exports.mkDatasetShrink = function mkDatasetShrink (dataset, field) {
       )])
   }
 }
-/**
- * fix
- * remove [field, value] entries from fields of filtered dataset rows
- */
