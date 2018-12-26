@@ -1,5 +1,5 @@
 const test = require('ava')
-const {normalize} = require('./../src/normalize')
+const { normalize } = require('./../src/normalize')
 
 test('already normalized', t => {
   const dataset = [
@@ -19,7 +19,7 @@ test('already normalized', t => {
     ]
   ]
   const normalized = normalize(dataset)
-  t.deepEqual(normalized, dataset, 'should be the same');
+  t.deepEqual(normalized, dataset, 'should be the same')
 })
 
 test('missing', t => {
@@ -51,5 +51,5 @@ test('missing', t => {
     ]
   ]
   const normalized = normalize(dataset)
-  t.deepEqual(normalized, expected, 'should be the same');
+  t.deepEqual(normalized, expected, 'should be the same')
 })

@@ -9,5 +9,5 @@ exports.datasetKeys = function datasetKeys (dataset) {
       })
     }
     return a
-  } ,[])
+  }, [])
 }

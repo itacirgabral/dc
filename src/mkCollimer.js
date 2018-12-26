@@ -3,6 +3,6 @@ exports.mkCollimer = function mkCollimer (dataset) {
     return dataset.map(
       ([type, fields]) => [type, fields.filter(
         e => e[0] === k)[0]
-    ])
+      ])
   }
 }

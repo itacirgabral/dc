@@ -3,7 +3,7 @@ const { plog2p: d } = require('./../src/plog2p')
 
 test('plog2p of 0.5', t => {
   const expected = 0.5 * Math.log2(0.5)
-  t.is(d(0.5), expected, `should be ${expected}`);
+  t.is(d(0.5), expected, `should be ${expected}`)
 })
 
 test('out of range', t => {
