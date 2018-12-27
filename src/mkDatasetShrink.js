@@ -6,7 +6,7 @@ exports.mkDatasetShrink = function mkDatasetShrink (dataset, field) {
       )
     ).map(
       ([type, fields]) => [type, fields.filter(
-        ([k, v]) => k !== field && v !== value
+        ([k, v]) => k !== field || v !== value
       )])
   }
 }
