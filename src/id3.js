@@ -5,22 +5,22 @@ const { mkGerm } = require('./mkGerm')
 const { mkDatasetShrink } = require('./mkDatasetShrink')
 
 exports.id3 = function id3 ({ dataset, keys }) {
-  const collimer = mkCollimer(dataset)
-
   if (!keys) {
     keys = datasetKeys(dataset)
   }
   const endLeaf = keys.length === 1
+  const germinator = mkGerm(endLeaf)
+  const collimer = mkCollimer(dataset)
 
-  const collimed = keys.map(collimer)
-  const agglutined = collimed.map(agglutinator)
-
-  const germination = mkGerm(endLeaf)
-  const gainsEach = agglutined.map(germination)
-
-  const bestGain = gainsEach.slice(1).reduce((a, b) => {
-    return a.gain > b.gain ? a : b
-  }, gainsEach[0])
+  const bestGain = keys.map(
+    collimer
+  ).map(
+    agglutinator
+  ).map(
+    germinator
+  ).reduce(
+    (a, b) => a.gain > b.gain ? a : b
+  )
 
   if (!endLeaf) {
     const field = bestGain.gridsheet[0][0]
