@@ -4,7 +4,8 @@
   "description": "decisiontree",
   "main": "index.js",
   "scripts": {
-    "test": "standard && ava"
+    "test": "ava",
+    "lint": "standard"
   },
   "ava": {
     "files": [
