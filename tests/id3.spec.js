@@ -21,7 +21,7 @@ test('id3 training terminal node', t => {
   t.deepEqual(value, expected.terminal)
 })
 
-test('id3 training binary', t => {
+test.skip('id3 training binary', t => {
   dataset.binary = [
     [[true], [['k1', 'v1'], ['k2', 'v3']]],
     [[false], [['k1', 'v1'], ['k2', 'v3']]],
@@ -48,7 +48,7 @@ test('id3 training binary', t => {
   t.deepEqual(value, expected.binary)
 })
 
-test('id3 training repeted values', t => {
+test.skip('id3 training repeted values', t => {
   dataset.binary = [
     [[true], [['k1', 'v1'], ['k2', 'v1']]],
     [[false], [['k1', 'v1'], ['k2', 'v2']]],

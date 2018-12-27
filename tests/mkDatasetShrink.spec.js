@@ -50,22 +50,22 @@ test('dataset shrink of Perspectiva.Chuvoso', t => {
 })
 
 dataset.kk = [
-  [[true],[["k1","v1"],["k2","v1"]]],
-  [[false],[["k1","v1"],["k2","v2"]]],
-  [[false],[["k1","v2"],["k2","v1"]]],
-  [[false],[["k1","v2"],["k2","v2"]]]
+  [[true], [['k1', 'v1'], ['k2', 'v1']]],
+  [[false], [['k1', 'v1'], ['k2', 'v2']]],
+  [[false], [['k1', 'v2'], ['k2', 'v1']]],
+  [[false], [['k1', 'v2'], ['k2', 'v2']]]
 ]
 
 field.kk = 'k1'
 datasetShrink.kk = mkDatasetShrink(dataset.kk, field.kk)
 
 expected.k1v1 = [
-  [[true],[["k2","v1"]]],
-  [[false],[["k2","v2"]]]
+  [[true], [['k2', 'v1']]],
+  [[false], [['k2', 'v2']]]
 ]
 expected.k1v2 = [
-  [[false],[["k2","v1"]]],
-  [[false],[["k2","v2"]]]
+  [[false], [['k2', 'v1']]],
+  [[false], [['k2', 'v2']]]
 ]
 
 test('edge case', t => {

@@ -19,7 +19,7 @@ exports.id3 = function id3 ({ dataset, keys }) {
   ).map(
     germinator
   ).reduce(
-    (a, b) => a.gain > b.gain ? a : b
+    (a, b) => a.gain < b.gain ? b : a
   )
 
   if (!endLeaf) {
