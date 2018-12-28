@@ -1,9 +1,19 @@
 version: 2.1
-
-orbs:
-  hello: circleci/hello-build@0.0.7 # uses the circleci/buildpack-deps Docker image
-
-workflows:
-  "Hello Workflow":
-    jobs:
-      - hello/hello-build
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+        command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+        key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+        command: npm install
+      - save_cache:
+        key: dependency-cache-{{ checksum "package.json" }}
+        paths:
+        - ./node_modules
+      - run:
+        command: npm test
