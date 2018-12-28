@@ -22,6 +22,8 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: test
           command: npm test
@@ -30,6 +32,8 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: lint
           command: npm run lint
