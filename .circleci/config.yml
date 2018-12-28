@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  build:
     docker:
       - image: circleci/node
     steps:
@@ -17,6 +17,11 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+  test:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
       - run:
           name: test
           command: npm test
@@ -26,26 +31,19 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@latest'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: install-npm
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
           name: lint
           command: npm run lint
 workflows:
   version: 2
   test_and_lint:
     jobs:
-      - test
+      - build
+      - test:
+          requires:
+            - build
       - lint:
+          requires:
+            - build
           filters: 
             branches: 
               only: master
