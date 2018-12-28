@@ -46,6 +46,6 @@ workflows:
     jobs:
       - test
       - lint
-          filters:
-            branches:
+          filters: 
+            branches: 
               only: master
