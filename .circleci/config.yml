@@ -1,28 +1,35 @@
 version: 2
 jobs:
-  build:
+  install:
     docker:
       - image: circleci/node
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm
           command: npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: node-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
   test:
     docker:
       - image: circleci/node
     steps:
+      - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          keys:
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1
       - run:
           name: test
           command: npm test
@@ -30,8 +37,12 @@ jobs:
     docker:
       - image: circleci/node
     steps:
+      - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          keys:
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1
       - run:
           name: lint
           command: npm run lint
@@ -39,13 +50,13 @@ workflows:
   version: 2
   test_and_lint:
     jobs:
-      - build
+      - install
       - test:
           requires:
-            - build
+            - install
       - lint:
           requires:
-            - build
+            - install
           filters: 
             branches: 
               only: master
