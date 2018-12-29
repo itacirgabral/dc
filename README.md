@@ -1,11 +1,13 @@
 # decisiontree
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Known Vulnerabilities](https://snyk.io/test/github/itacirgabral/dc/badge.svg?targetFile=package.json)](https://snyk.io/test/github/itacirgabral/dc?targetFile=package.json)
-[![CircleCI](https://circleci.com/gh/itacirgabral/dc.svg?style=svg)](https://circleci.com/gh/itacirgabral/dc) [![Greenkeeper badge](https://badges.greenkeeper.io/itacirgabral/dc.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/itacirgabral/dc.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/itacirgabral/dc.svg?style=svg)](https://circleci.com/gh/itacirgabral/dc) 
+[![codecov](https://codecov.io/gh/itacirgabral/dc/branch/master/graph/badge.svg)](https://codecov.io/gh/itacirgabral/dc)
 
 ----
 
 ## todo
-- [ ] [coverall](https://coveralls.io/)
+- [x] [codecove](https://codecov.io/gh/itacirgabral/dc/tree/master/src) ~~coverall~~
 - [ ] [sonarqube](https://www.sonarqube.org/)
 - [ ] [gitbook](https://www.gitbook.com/)
