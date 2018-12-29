@@ -44,6 +44,18 @@ jobs:
       - run:
           name: lint
           command: npm run lint
+  codecov:
+    docker:
+      - image: circleci/node
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - checkout
+      - restore_cache:
+          key: npm-{{ checksum "package-lock.json" }}
+      - run:
+          name: code_coverage
+          command: npm run codecov
 workflows:
   version: 2
   test_and_lint:
@@ -53,6 +65,12 @@ workflows:
           requires:
             - install
       - lint:
+          requires:
+            - install
+          filters: 
+            branches: 
+              only: master
+      - codecov:
           requires:
             - install
           filters: 
