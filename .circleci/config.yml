@@ -6,10 +6,7 @@ jobs:
     steps:
       # source code
       - restore_cache:
-          keys:
-            - source-v1-{{ .Branch }}-{{ .Revision }}
-            - source-v1-{{ .Branch }}-
-            - source-v1-
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
       - checkout
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
@@ -17,10 +14,7 @@ jobs:
             - ".git"
       # node modules
       - restore_cache:
-          keys:
-            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - node-v1-{{ .Branch }}-
-            - node-v1-
+          key: node-cache-{{ checksum "package-lock.json" }}
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
@@ -35,12 +29,11 @@ jobs:
     docker:
       - image: circleci/node
     steps:
+      - restore_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
       - checkout
       - restore_cache:
-          keys:
-            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - node-v1-{{ .Branch }}-
-            - node-v1
+          key: node-cache-{{ checksum "package-lock.json" }}e
       - run:
           name: test
           command: npm test
@@ -48,12 +41,11 @@ jobs:
     docker:
       - image: circleci/node
     steps:
+      - restore_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
       - checkout
       - restore_cache:
-          keys:
-            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - node-v1-{{ .Branch }}-
-            - node-v1
+          key: node-cache-{{ checksum "package-lock.json" }}
       - run:
           name: lint
           command: npm run lint
