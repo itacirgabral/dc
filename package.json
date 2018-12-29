@@ -6,7 +6,7 @@
   "scripts": {
     "test": "ava",
     "nyc": "nyc ava",
-    "lcov": "nyc report --reporter=text-lcov > lcov.info",
+    "lcov": "nyc report --reporter=text-lcov > coverage.lcov",
     "lint": "standard"
   },
   "ava": {
