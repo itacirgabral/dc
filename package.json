@@ -16,7 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/itacirgabral/dc.git"
   },
-  "keywords": ["decision tree", "machine learning", "classification"],
+  "keywords": [
+    "decision tree",
+    "machine learning",
+    "classification"
+  ],
   "author": "Itacir Gabral",
   "license": "ISC",
   "bugs": {
