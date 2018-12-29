@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: circleci/node
     steps:
-      # source code
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - checkout
@@ -12,7 +11,6 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
           paths:
             - ".git"
-      # node modules
       - restore_cache:
           key: npm-{{ checksum "package-lock.json" }}
       - run:
@@ -63,6 +61,3 @@ workflows:
           filters: 
             branches: 
               only: master
-# node-cache-Gko36wLiGK09WrqdkNprrYT_9BcniJCX__sYyRSc46E=
-# node-cache-B+Dbm4txpaIDjA3JInSVdUuJr73d9eLU6jHiY1pgDKY=e
-# node-cache-B+Dbm4txpaIDjA3JInSVdUuJr73d9eLU6jHiY1pgDKY=
