@@ -7,8 +7,6 @@
     "test": "ava",
     "nyc": "nyc ava",
     "lcov": "nyc report --reporter=text-lcov > lcov.info",
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "report": "nyc report --reporter=html",
     "lint": "standard"
   },
   "ava": {

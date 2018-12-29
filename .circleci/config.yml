@@ -54,8 +54,11 @@ jobs:
       - restore_cache:
           key: npm-{{ checksum "package-lock.json" }}
       - run:
-          name: code_coverage
-          command: npm run codecov
+          name: lcov-file
+          command: npm run lcov && npx codecov
+      - run:
+          name: codecov-report
+          command: npx codecov -t $CODECOV_TOKEN
 workflows:
   version: 2
   test_and_lint:
