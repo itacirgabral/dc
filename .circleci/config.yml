@@ -6,15 +6,15 @@ jobs:
     steps:
       # source code
       - restore_cache:
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - checkout
       - save_cache:
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
           paths:
             - ".git"
       # node modules
       - restore_cache:
-          key: node-cache-{{ checksum "package-lock.json" }}
+          key: npm-{{ checksum "package-lock.json" }}
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
@@ -22,7 +22,7 @@ jobs:
           name: install-npm
           command: npm install
       - save_cache:
-          key: node-cache-{{ checksum "package-lock.json" }}
+          key: npm-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
   test:
@@ -30,10 +30,10 @@ jobs:
       - image: circleci/node
     steps:
       - restore_cache:
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - checkout
       - restore_cache:
-          key: node-cache-{{ checksum "package-lock.json" }}e
+          key: npm-{{ checksum "package-lock.json" }}
       - run:
           name: test
           command: npm test
@@ -42,10 +42,10 @@ jobs:
       - image: circleci/node
     steps:
       - restore_cache:
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - checkout
       - restore_cache:
-          key: node-cache-{{ checksum "package-lock.json" }}
+          key: npm-{{ checksum "package-lock.json" }}
       - run:
           name: lint
           command: npm run lint
@@ -63,3 +63,6 @@ workflows:
           filters: 
             branches: 
               only: master
+# node-cache-Gko36wLiGK09WrqdkNprrYT_9BcniJCX__sYyRSc46E=
+# node-cache-B+Dbm4txpaIDjA3JInSVdUuJr73d9eLU6jHiY1pgDKY=e
+# node-cache-B+Dbm4txpaIDjA3JInSVdUuJr73d9eLU6jHiY1pgDKY=
