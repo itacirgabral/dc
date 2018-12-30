@@ -8,6 +8,15 @@
 ----
 
 ## todo
+### devop
+- [x] circleci
 - [x] [codecove](https://codecov.io/gh/itacirgabral/dc/tree/master/src) ~~coverall~~
 - [ ] [sonarqube](https://www.sonarqube.org/)
-- [ ] [gitbook](https://www.gitbook.com/)
+
+### app
+- [x] train id3
+- [ ] evaluate queries
+- [ ] http command line
+    - [ ] /help
+    - [ ] /classify
+- [ ] id3 -> ic4.5
