@@ -5,8 +5,8 @@ exports.mkGerm = function mkgerm (endLeaf) {
     const leaf = {}
 
     const field = gs[0][0]
-    leaf.gain = gain(gs)
-    leaf.gridsheet = gs
+    leaf[Symbol.for('gain')] = gain(gs)
+    leaf[Symbol.for('gridsheet')] = gs
 
     leaf[field] = gs[1].reduce((a, b) => {
       if (endLeaf) {

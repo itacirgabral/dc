@@ -16,7 +16,7 @@ test('id3 training terminal node', t => {
     }
   }
 
-  const { gain, gridsheet, ...value } = train({ dataset: dataset.terminal })
+  const { [Symbol.for('gain')]: gain, [Symbol.for('gridsheet')]:gridsheet, ...value } = train({ dataset: dataset.terminal })
 
   t.deepEqual(value, expected.terminal)
 })
@@ -28,7 +28,7 @@ test('id3 training binary', t => {
     [[false], [['k1', 'v2'], ['k2', 'v1']]],
     [[true], [['k1', 'v2'], ['k2', 'v2']]]
   ]
-  expected.binary = { 'gain': 0, 'gridsheet': [['k1', 2, 2], [['v1', 1, 1], ['v2', 1, 1]]], 'k1': { 'v1': { 'gain': 1, 'gridsheet': [['k2', 1, 1], [['v1', 1, 0], ['v2', 0, 1]]], 'k2': { 'v1': true, 'v2': false } }, 'v2': { 'gain': 1, 'gridsheet': [['k2', 1, 1], [['v1', 0, 1], ['v2', 1, 0]]], 'k2': { 'v1': false, 'v2': true } } } }
+  expected.binary = { [Symbol.for('gain')]: 0, [Symbol.for('gridsheet')]: [['k1', 2, 2], [['v1', 1, 1], ['v2', 1, 1]]], 'k1': { 'v1': { [Symbol.for('gain')]: 1, [Symbol.for('gridsheet')]: [['k2', 1, 1], [['v1', 1, 0], ['v2', 0, 1]]], 'k2': { 'v1': true, 'v2': false } }, 'v2': { [Symbol.for('gain')]: 1, [Symbol.for('gridsheet')]: [['k2', 1, 1], [['v1', 0, 1], ['v2', 1, 0]]], 'k2': { 'v1': false, 'v2': true } } } }
 
   const value = train({ dataset: dataset.binary })
 

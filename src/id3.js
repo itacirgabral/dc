@@ -19,11 +19,11 @@ exports.id3 = function id3 ({ dataset, keys }) {
   ).map(
     germinator
   ).reduce(
-    (a, b) => a.gain < b.gain ? b : a
+    (a, b) => a[Symbol.for('gain')] < b[Symbol.for('gain')] ? b : a
   )
 
   if (!endLeaf) {
-    const field = bestGain.gridsheet[0][0]
+    const field = bestGain[Symbol.for('gridsheet')][0][0]
     const nextKeys = keys.filter(e => e !== field)
     const mkDataset = mkDatasetShrink(dataset, field)
 

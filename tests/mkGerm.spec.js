@@ -13,8 +13,8 @@ const input = [
 
 test('germinate Perspectiva', t => {
   const expected = {
-    'gain': gain(input),
-    'gridsheet': input,
+    [Symbol.for('gain')]: gain(input),
+    [Symbol.for('gridsheet')]: input,
     'Perspectiva': {
       'Ensolarado': '',
       'Nublado': true,
@@ -28,8 +28,8 @@ test('germinate Perspectiva', t => {
 
 test('germinate Perspectiva at end leaf', t => {
   const expected = {
-    'gain': gain(input),
-    'gridsheet': input,
+    [Symbol.for('gain')]: gain(input),
+    [Symbol.for('gridsheet')]: input,
     'Perspectiva': {
       'Ensolarado': false,
       'Nublado': true,
