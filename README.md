@@ -4,7 +4,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/itacirgabral/dc.svg)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/itacirgabral/dc.svg?style=svg)](https://circleci.com/gh/itacirgabral/dc) 
 [![codecov](https://codecov.io/gh/itacirgabral/dc/branch/master/graph/badge.svg)](https://codecov.io/gh/itacirgabral/dc)
-[![pibiti](./share/pibiti-cnpq-blue.svg)](http://lavi.ic.ufmt.br/davi/en/)
+[![pibiti](https://img.shields.io/badge/pitivi-cnpq-blue.svg)](http://lavi.ic.ufmt.br/davi/en/)
 
 ----
 
@@ -17,6 +17,9 @@
 ### app
 - [x] train id3
 - [ ] evaluate queries
+    - [] n combinations
+    - [] k happy path
+    - [] mkClassifier
 - [ ] http command line
     - [ ] /help
     - [ ] /classify
