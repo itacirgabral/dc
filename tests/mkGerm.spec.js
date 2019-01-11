@@ -1,7 +1,5 @@
 const test = require('ava')
 const { mkGerm } = require('./../src/mkGerm')
-const { gain } = require('./../src/gain')
-
 const rmSymbol = e => JSON.parse(JSON.stringify(e))
 
 const input = [

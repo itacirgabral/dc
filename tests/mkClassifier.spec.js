@@ -5,23 +5,23 @@ const tree = {
   [Symbol.for('gain')]: 0.24674981977443905,
   [Symbol.for('gridsheet')]: [
     [
-      "Perspectiva",
+      'Perspectiva',
       9,
       5
     ],
     [
       [
-        "Ensolarado",
+        'Ensolarado',
         2,
         3
       ],
       [
-        "Nublado",
+        'Nublado',
         4,
         0
       ],
       [
-        "Chuvoso",
+        'Chuvoso',
         3,
         2
       ]
@@ -32,18 +32,18 @@ const tree = {
       [Symbol.for('gain')]: 0.9709505944546686,
       [Symbol.for('gridsheet')]: [
         [
-          "Umidade",
+          'Umidade',
           2,
           3
         ],
         [
           [
-            "Alta",
+            'Alta',
             0,
             3
           ],
           [
-            "Normal",
+            'Normal',
             2,
             0
           ]
@@ -59,18 +59,18 @@ const tree = {
       [Symbol.for('gain')]: 0.9709505944546686,
       [Symbol.for('gridsheet')]: [
         [
-          "Vento",
+          'Vento',
           3,
           2
         ],
         [
           [
-            "Fraco",
+            'Fraco',
             3,
             0
           ],
           [
-            "Forte",
+            'Forte',
             0,
             2
           ]
@@ -88,61 +88,61 @@ const classer = mkClassifier(tree)
 
 const queries = {}
 queries.true = [
-  {"Perspectiva":"Chuvoso","Temperatura":"Fresca","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Moderada","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Moderada","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Fresca","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Moderada","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Nublado","Temperatura":"Fresca","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Nublado","Temperatura":"Moderada","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Nublado","Temperatura":"Quente","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Nublado","Temperatura":"Quente","Umidade":"Normal","Vento":"Fraco"}
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Fresca', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Moderada', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Moderada', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Fresca', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Moderada', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Fresca', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Moderada', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Quente', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Quente', 'Umidade': 'Normal', 'Vento': 'Fraco' }
 ]
 
 queries.false = [
-  {"Perspectiva":"Chuvoso","Temperatura":"Fresca","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Moderada","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Moderada","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Quente","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Quente","Umidade":"Alta","Vento":"Fraco"}
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Fresca', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Moderada', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Moderada', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Quente', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Quente', 'Umidade': 'Alta', 'Vento': 'Fraco' }
 ]
 
 queries.untrained = [
-  {"Perspectiva":"Chuvoso","Temperatura":"Fresca","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Fresca","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Moderada","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Quente","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Quente","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Quente","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Chuvoso","Temperatura":"Quente","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Fresca","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Fresca","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Fresca","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Moderada","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Moderada","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Quente","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Ensolarado","Temperatura":"Quente","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Nublado","Temperatura":"Fresca","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Nublado","Temperatura":"Fresca","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Nublado","Temperatura":"Fresca","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Nublado","Temperatura":"Moderada","Umidade":"Alta","Vento":"Fraco"},
-  {"Perspectiva":"Nublado","Temperatura":"Moderada","Umidade":"Normal","Vento":"Forte"},
-  {"Perspectiva":"Nublado","Temperatura":"Moderada","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Nublado","Temperatura":"Quente","Umidade":"Alta","Vento":"Forte"},
-  {"Perspectiva":"Nublado","Temperatura":"Quente","Umidade":"Normal","Vento":"Forte"}
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Fresca', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Fresca', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Moderada', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Quente', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Quente', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Quente', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Chuvoso', 'Temperatura': 'Quente', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Fresca', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Fresca', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Fresca', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Moderada', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Moderada', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Quente', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Ensolarado', 'Temperatura': 'Quente', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Fresca', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Fresca', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Fresca', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Moderada', 'Umidade': 'Alta', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Moderada', 'Umidade': 'Normal', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Moderada', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Quente', 'Umidade': 'Alta', 'Vento': 'Forte' },
+  { 'Perspectiva': 'Nublado', 'Temperatura': 'Quente', 'Umidade': 'Normal', 'Vento': 'Forte' }
 ]
 
 queries.missing = [
   {},
-  {"Temperatura":"Quente","Umidade":"Normal","Vento":"Fraco"},
-  {"Perspectiva":"Ensolarado"},
-  {"Perspectiva":"Chuvoso"}
+  { 'Temperatura': 'Quente', 'Umidade': 'Normal', 'Vento': 'Fraco' },
+  { 'Perspectiva': 'Ensolarado' },
+  { 'Perspectiva': 'Chuvoso' }
 ]
 
 queries.broken = [
-  {"Perspectiva":"err"},
-  {"Perspectiva":"Ensolarado", "Umidade":"err"},
-  {"Perspectiva":"Ensolarado", "Vento":"err"}
+  { 'Perspectiva': 'err' },
+  { 'Perspectiva': 'Ensolarado', 'Umidade': 'err' },
+  { 'Perspectiva': 'Ensolarado', 'Vento': 'err' }
 ]
 
 test('classification test with trained true dataset', t => {
