@@ -132,6 +132,19 @@ queries.untrained = [
   {"Perspectiva":"Nublado","Temperatura":"Quente","Umidade":"Normal","Vento":"Forte"}
 ]
 
+queries.missing = [
+  {},
+  {"Temperatura":"Quente","Umidade":"Normal","Vento":"Fraco"},
+  {"Perspectiva":"Ensolarado"},
+  {"Perspectiva":"Chuvoso"}
+]
+
+queries.broken = [
+  {"Perspectiva":"err"},
+  {"Perspectiva":"Ensolarado", "Umidade":"err"},
+  {"Perspectiva":"Ensolarado", "Vento":"err"}
+]
+
 test('classification test with trained true dataset', t => {
   t.plan(queries.true.length)
   for (let i = 0; i < queries.true.length; i++) {
@@ -151,5 +164,21 @@ test('classification all untrained combinations', t => {
   t.plan(queries.untrained.length)
   for (let i = 0; i < queries.untrained.length; i++) {
     t.true(types.includes(classer(queries.untrained[i])))
+  }
+})
+
+test('classification queries with missing attributes', t => {
+  const types = [true, false]
+  t.plan(queries.missing.length)
+  for (let i = 0; i < queries.missing.length; i++) {
+    t.true(types.includes(classer(queries.missing[i])))
+  }
+})
+
+test('classification queries with broken attributes', t => {
+  const types = [true, false]
+  t.plan(queries.broken.length)
+  for (let i = 0; i < queries.broken.length; i++) {
+    t.true(types.includes(classer(queries.broken[i])))
   }
 })

@@ -20,7 +20,8 @@
     - [x] n combinations
     - [x] mkClassifier
     - [x] k happy path
-    - [ ] missing paths
+    - [x] missing paths
+    - [x] broken paths
 - [ ] http command line
     - [ ] /help
     - [ ] /classify
