@@ -16,7 +16,7 @@
 
 ### app
 - [x] train id3
-- [ ] evaluate queries
+- [x] evaluate queries
     - [x] n combinations
     - [x] mkClassifier
     - [x] k happy path
