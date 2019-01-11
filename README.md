@@ -25,3 +25,7 @@
     - [ ] /help
     - [ ] /classify
 - [ ] id3 -> ic4.5
+
+## License
+
+[MIT](http://itacirgabral.mit-license.org)
