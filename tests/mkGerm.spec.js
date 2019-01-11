@@ -2,6 +2,8 @@ const test = require('ava')
 const { mkGerm } = require('./../src/mkGerm')
 const { gain } = require('./../src/gain')
 
+const rmSymbol = e => JSON.parse(JSON.stringify(e))
+
 const input = [
   ['Perspectiva', 9, 5],
   [
@@ -13,8 +15,6 @@ const input = [
 
 test('germinate Perspectiva', t => {
   const expected = {
-    [Symbol.for('gain')]: gain(input),
-    [Symbol.for('gridsheet')]: input,
     'Perspectiva': {
       'Ensolarado': '',
       'Nublado': true,
@@ -23,13 +23,12 @@ test('germinate Perspectiva', t => {
 
   const endLeaf = false
 
-  t.deepEqual(mkGerm(endLeaf)(input), expected, 'should build tree branch')
+  const result = mkGerm(endLeaf)(input)
+  t.deepEqual(rmSymbol(result), expected, 'should build tree branch')
 })
 
 test('germinate Perspectiva at end leaf', t => {
   const expected = {
-    [Symbol.for('gain')]: gain(input),
-    [Symbol.for('gridsheet')]: input,
     'Perspectiva': {
       'Ensolarado': false,
       'Nublado': true,
@@ -38,5 +37,6 @@ test('germinate Perspectiva at end leaf', t => {
 
   const endLeaf = true
 
-  t.deepEqual(mkGerm(endLeaf)(input), expected, 'should build terminal tree branch')
+  const result = mkGerm(endLeaf)(input)
+  t.deepEqual(rmSymbol(result), expected, 'should build terminal tree branch')
 })
