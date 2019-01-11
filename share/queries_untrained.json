@@ -1,0 +1,134 @@
+[
+  {
+    "Perspectiva": "Chuvoso",
+    "Temperatura": "Fresca",
+    "Umidade": "Alta",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Chuvoso",
+    "Temperatura": "Fresca",
+    "Umidade": "Alta",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Chuvoso",
+    "Temperatura": "Moderada",
+    "Umidade": "Normal",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Chuvoso",
+    "Temperatura": "Quente",
+    "Umidade": "Alta",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Chuvoso",
+    "Temperatura": "Quente",
+    "Umidade": "Alta",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Chuvoso",
+    "Temperatura": "Quente",
+    "Umidade": "Normal",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Chuvoso",
+    "Temperatura": "Quente",
+    "Umidade": "Normal",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Ensolarado",
+    "Temperatura": "Fresca",
+    "Umidade": "Alta",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Ensolarado",
+    "Temperatura": "Fresca",
+    "Umidade": "Alta",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Ensolarado",
+    "Temperatura": "Fresca",
+    "Umidade": "Normal",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Ensolarado",
+    "Temperatura": "Moderada",
+    "Umidade": "Alta",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Ensolarado",
+    "Temperatura": "Moderada",
+    "Umidade": "Normal",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Ensolarado",
+    "Temperatura": "Quente",
+    "Umidade": "Normal",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Ensolarado",
+    "Temperatura": "Quente",
+    "Umidade": "Normal",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Fresca",
+    "Umidade": "Alta",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Fresca",
+    "Umidade": "Alta",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Fresca",
+    "Umidade": "Normal",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Moderada",
+    "Umidade": "Alta",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Moderada",
+    "Umidade": "Normal",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Moderada",
+    "Umidade": "Normal",
+    "Vento": "Fraco"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Quente",
+    "Umidade": "Alta",
+    "Vento": "Forte"
+  },
+  {
+    "Perspectiva": "Nublado",
+    "Temperatura": "Quente",
+    "Umidade": "Normal",
+    "Vento": "Forte"
+  }
+]

@@ -17,9 +17,10 @@
 ### app
 - [x] train id3
 - [ ] evaluate queries
-    - [] n combinations
-    - [] k happy path
-    - [] mkClassifier
+    - [x] n combinations
+    - [x] mkClassifier
+    - [x] k happy path
+    - [ ] missing paths
 - [ ] http command line
     - [ ] /help
     - [ ] /classify

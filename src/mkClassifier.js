@@ -1,12 +1,13 @@
 exports.mkClassifier = function mkClassifier (tree) {
-  let sap
-  let fork
   return function classifier (query) {
-    while (typeof(tree) === 'object') {
-      sap = Object.keys(tree)[0]
-      fork = Object.keys(tree[sap])
-      tree = tree[sap][query[sap]]
+    let sap
+    let fork
+    let branch = tree
+    while (typeof(branch) === 'object') {
+      sap = Object.keys(branch)[0]
+      fork = Object.keys(branch[sap])
+      branch = branch[sap][query[sap]]
     }
-    return tree
+    return branch
   }
 }
