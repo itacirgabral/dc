@@ -55,7 +55,7 @@ jobs:
           key: npm-{{ checksum "package-lock.json" }}
       - run:
           name: lcov-file
-          command: npm run lcov && npx codecov
+          command: npm run lcov
       - run:
           name: codecov-report
           command: npx codecov -t $CODECOV_TOKEN

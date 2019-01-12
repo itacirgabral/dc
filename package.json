@@ -6,7 +6,7 @@
   "scripts": {
     "test": "ava",
     "nyc": "nyc ava",
-    "lcov": "nyc report --reporter=text-lcov > coverage.lcov",
+    "lcov": "nyc report --reporter=text-lcov ava > coverage.lcov",
     "lint": "standard"
   },
   "ava": {
@@ -24,7 +24,7 @@
     "classification"
   ],
   "author": "Itacir Gabral",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/itacirgabral/dc/issues"
   },
