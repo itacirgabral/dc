@@ -59,6 +59,9 @@ jobs:
       - run:
           name: codecov-report
           command: npx codecov -t $CODECOV_TOKEN
+      - store_artifacts:
+          path: $CIRCLE_WORKING_DIRECTORY/coverage.lcov
+          destination: coverage
 workflows:
   version: 2
   test_and_lint:
