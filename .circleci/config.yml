@@ -55,7 +55,7 @@ jobs:
           key: npm-{{ checksum "package-lock.json" }}
       - run:
           name: lcov-file
-          command: npx nyc report --reporter=text-lcov ava > coverage.lcov
+          command: npx nyc report --reporter=text-lcov ava -T 3000 > coverage.lcov
       - run:
           name: codecov-report
           command: npx codecov -t $CODECOV_TOKEN
