@@ -60,7 +60,7 @@ jobs:
           name: codecov-report
           command: npx codecov -t $CODECOV_TOKEN
       - store_artifacts:
-          path: /coverage.lcov
+          path: coverage.lcov
           destination: coverage
 workflows:
   version: 2
